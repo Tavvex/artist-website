@@ -3,44 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блог и новости | Александра Волкова</title>
+    <title>Блог и новости | [Имя художника]</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Хедер - новый дизайн -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="logo">
-                    <span class="logo-text">Александра Волкова</span>
+                    <span class="logo-text">[Имя художника]</span>
                     <span class="logo-subtitle">художник</span>
                 </a>
+            
+                <div class="nav-main">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Главная</a></li>
+                        <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+                        <li><a href="about.html" class="nav-link">Обо мне</a></li>
+                        <li><a href="shop.html" class="nav-link">Магазин</a></li>
+                        <li><a href="blog.html" class="nav-link">Блог</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <a href="#footer" class="contact-btn">Связаться</a>
+                        <a href="shop.html" class="cart-icon" aria-label="Корзина">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
                 
                 <button class="menu-toggle" aria-label="Меню">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                
-                <ul class="nav-menu">
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="portfolio.html">Портфолио</a></li>
-                    <li><a href="about.html">Обо мне</a></li>
-                    <li><a href="shop.html">Магазин и заказы</a></li>
-                    <li><a href="blog.html" class="active">Блог</a></li>
-                    <li><a href="#footer" class="contact-btn">Связаться</a></li>
-                </ul>
-                
-                <div class="header-actions">
-                    <a href="shop.html" class="cart-icon" aria-label="Корзина">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                </div>
             </nav>
         </div>
     </header>

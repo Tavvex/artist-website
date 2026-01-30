@@ -2,7 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Устанавливаем текущий год в футере
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
     
     // Инициализация меню для мобильных устройств
     initMobileMenu();
@@ -35,45 +38,67 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Мобильное меню - исправленная версия
+// Мобильное меню - исправленная версия
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const navMain = document.querySelector('.nav-main');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const contactBtn = document.querySelector('.contact-btn');
     
     if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            
-            // Блокировка скролла при открытом меню
-            if (navMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMobileMenu();
         });
         
         // Закрытие меню при клике на ссылку
-        const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMobileMenu();
             });
+        });
+        
+        // Закрытие меню при клике на кнопку контактов
+        if (contactBtn) {
+            contactBtn.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        }
+        
+        // Закрытие меню при клике вне меню
+        document.addEventListener('click', function(e) {
+            if (navMain && navMain.classList.contains('active') && 
+                !navMain.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Закрытие меню при нажатии Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMain && navMain.classList.contains('active')) {
+                closeMobileMenu();
+            }
         });
     }
     
-    // Закрытие меню при клике вне его
-    document.addEventListener('click', function(event) {
-        if (menuToggle && navMenu && 
-            !menuToggle.contains(event.target) && 
-            !navMenu.contains(event.target) && 
-            navMenu.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+    function toggleMobileMenu() {
+        menuToggle.classList.toggle('active');
+        navMain.classList.toggle('active');
+        
+        // Блокировка скролла при открытом меню
+        if (navMain.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
             document.body.style.overflow = '';
         }
-    });
+    }
+    
+    function closeMobileMenu() {
+        menuToggle.classList.remove('active');
+        navMain.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 // Слайдер на главной странице
@@ -118,11 +143,15 @@ function initHeroSlider() {
     
     // Автопрокрутка слайдов
     function startSlideShow() {
-        slideInterval = setInterval(nextSlide, 5000);
+        if (slides.length > 1) {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
     }
     
     function stopSlideShow() {
-        clearInterval(slideInterval);
+        if (slideInterval) {
+            clearInterval(slideInterval);
+        }
     }
     
     // Обработчики событий
@@ -156,6 +185,12 @@ function initHeroSlider() {
     if (slider) {
         slider.addEventListener('mouseenter', stopSlideShow);
         slider.addEventListener('mouseleave', startSlideShow);
+        
+        // Пауза при касании на мобильных устройствах
+        slider.addEventListener('touchstart', stopSlideShow);
+        slider.addEventListener('touchend', function() {
+            setTimeout(startSlideShow, 3000);
+        });
     }
     
     // Запуск слайдшоу

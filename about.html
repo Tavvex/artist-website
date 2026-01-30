@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Хедер - новый дизайн -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
@@ -18,130 +19,211 @@
                     <span class="logo-text">[Имя художника]</span>
                     <span class="logo-subtitle">художник</span>
                 </a>
+            
+                <div class="nav-main">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Главная</a></li>
+                        <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+                        <li><a href="about.html" class="nav-link">Обо мне</a></li>
+                        <li><a href="shop.html" class="nav-link">Магазин</a></li>
+                        <li><a href="blog.html" class="nav-link">Блог</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <a href="#footer" class="contact-btn">Связаться</a>
+                        <a href="shop.html" class="cart-icon" aria-label="Корзина">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
                 
                 <button class="menu-toggle" aria-label="Меню">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                
-                <ul class="nav-menu">
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="portfolio.html">Портфолио</a></li>
-                    <li><a href="about.html" class="active">Обо мне</a></li>
-                    <li><a href="shop.html">Магазин и заказы</a></li>
-                    <li><a href="blog.html">Блог</a></li>
-                    <li><a href="#footer" class="contact-btn">Связаться</a></li>
-                </ul>
-                
-                <div class="header-actions">
-                    <a href="shop.html" class="cart-icon" aria-label="Корзина">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-count">0</span>
-                    </a>
-                </div>
             </nav>
         </div>
     </header>
 
-    <!-- О художнике -->
+    <!-- О художнике - новый дизайн -->
     <section class="about-section">
         <div class="container">
-            <div class="about-header">
-                <h1 class="page-title">Обо мне</h1>
-                <p class="page-subtitle">[Краткое описание, например: Художник, исследователь, создатель]</p>
+            <!-- Заголовок -->
+            <div class="page-header">
+                <h1 class="page-title">[Имя художника]</h1>
+                <p class="page-subtitle">Художник, [специализация или стиль]</p>
             </div>
             
-            <div class="about-content detailed">
-                <div class="about-main">
-                    <div class="about-image-large">
-                        <img src="images/about/artist-studio.jpg" alt="[Имя художника] в мастерской">
+            <!-- Основной контент -->
+            <div class="about-main">
+                <!-- Левая колонка с фото -->
+                <div class="about-photo">
+                    <div class="photo-frame">
+                        <img src="images/about/artist.jpg" alt="[Имя художника]">
+                        <div class="photo-decoration"></div>
                     </div>
                     
-                    <div class="about-text">
-                        <h2>Мой творческий путь</h2>
-                        <p>[Здесь должна быть творческая биография художника: образование, начало творческого пути, формирование стиля, ключевые моменты в карьере.]</p>
+                    <!-- Контактная информация -->
+                    <div class="contact-card">
+                        <h3><i class="fas fa-envelope"></i> Контакты</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fas fa-at"></i>
+                                <a href="mailto:[email художника]">[email художника]</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:[телефон художника]">[телефон художника]</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>[Город, страна]</span>
+                            </li>
+                        </ul>
                         
-                        <p>[Второй абзац: продолжение биографии, описание творческого метода, используемых техник и материалов.]</p>
-                        
-                        <blockquote class="about-quote">
-                            <p>"[Цитата художника о творчестве, искусстве или философии]"</p>
-                        </blockquote>
-                        
-                        <p>[Третий абзац: описание текущей деятельности, проектов, планов на будущее.]</p>
+                        <div class="social-links-small">
+                            <a href="[Instagram]" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="[Behance]" target="_blank" aria-label="Behance">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                            <a href="[Pinterest]" target="_blank" aria-label="Pinterest">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="about-details">
-                    <div class="detail-card">
-                        <div class="detail-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Техники и материалы</h3>
-                        <p>[Описание используемых техник, материалов, предпочтений в работе. Например: Работаю преимущественно с маслом и акрилом, часто экспериментирую со смешанными техниками.]</p>
+                <!-- Правая колонка с информацией -->
+                <div class="about-info">
+                    <!-- Введение -->
+                    <div class="info-block">
+                        <h2><i class="fas fa-paint-brush"></i> О художнике</h2>
+                        <p>[Краткое введение о художнике, его творческом пути и философии. Здесь должен быть 1-2 абзаца текста, который дает общее представление о художнике и его работе.]</p>
+                        <p>[Второй абзац: дополнительная информация о стиле, технике, вдохновении.]</p>
                     </div>
                     
-                    <div class="detail-card">
-                        <div class="detail-icon">
-                            <i class="fas fa-award"></i>
+                    <!-- Образование и опыт -->
+                    <div class="info-block">
+                        <h2><i class="fas fa-graduation-cap"></i> Образование и опыт</h2>
+                        <div class="experience-item">
+                            <div class="exp-year">[Год] - [Год]</div>
+                            <div class="exp-content">
+                                <h3>[Название учебного заведения или проекта]</h3>
+                                <p>[Описание: степень, специализация, ключевые достижения]</p>
+                            </div>
                         </div>
-                        <h3>Выставки и достижения</h3>
-                        <p>[Информация о выставках, участии в конкурсах, наградах. Например: Участник групповых и персональных выставок. Работы находятся в частных коллекциях.]</p>
+                        
+                        <div class="experience-item">
+                            <div class="exp-year">[Год] - [Год]</div>
+                            <div class="exp-content">
+                                <h3>[Название учебного заведения или проекта]</h3>
+                                <p>[Описание: степень, специализация, ключевые достижения]</p>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <div class="exp-year">[Год] - настоящее время</div>
+                            <div class="exp-content">
+                                <h3>[Текущая деятельность]</h3>
+                                <p>[Описание текущих проектов, работ, направлений]</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="detail-card">
-                        <div class="detail-icon">
-                            <i class="fas fa-lightbulb"></i>
+                    <!-- Техники и материалы -->
+                    <div class="info-block">
+                        <h2><i class="fas fa-palette"></i> Техники и материалы</h2>
+                        <div class="techniques-grid">
+                            <div class="technique-item">
+                                <div class="tech-icon">
+                                    <i class="fas fa-brush"></i>
+                                </div>
+                                <h3>Масляная живопись</h3>
+                                <p>[Описание работы с маслом, предпочтения, особенности]</p>
+                            </div>
+                            
+                            <div class="technique-item">
+                                <div class="tech-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <h3>Акрил</h3>
+                                <p>[Описание работы с акрилом, преимущества, применение]</p>
+                            </div>
+                            
+                            <div class="technique-item">
+                                <div class="tech-icon">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </div>
+                                <h3>Графика</h3>
+                                <p>[Описание графических работ, используемые материалы]</p>
+                            </div>
+                            
+                            <div class="technique-item">
+                                <div class="tech-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <h3>Смешанная техника</h3>
+                                <p>[Описание экспериментов с материалами и текстурами]</p>
+                            </div>
                         </div>
-                        <h3>Философия творчества</h3>
-                        <p>[Описание творческой философии, что вдохновляет, какие темы исследуются в работах.]</p>
+                    </div>
+                    
+                    <!-- Выставки и достижения -->
+                    <div class="info-block">
+                        <h2><i class="fas fa-trophy"></i> Выставки и достижения</h2>
+                        <div class="achievements">
+                            <div class="achievement-item">
+                                <div class="ach-year">[Год]</div>
+                                <div class="ach-content">
+                                    <h3>[Название выставки или награды]</h3>
+                                    <p>[Место проведения или описание достижения]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-item">
+                                <div class="ach-year">[Год]</div>
+                                <div class="ach-content">
+                                    <h3>[Название выставки или награды]</h3>
+                                    <p>[Место проведения или описание достижения]</p>
+                                </div>
+                            </div>
+                            
+                            <div class="achievement-item">
+                                <div class="ach-year">[Год]</div>
+                                <div class="ach-content">
+                                    <h3>[Название выставки или награды]</h3>
+                                    <p>[Место проведения или описание достижения]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Творческая философия -->
+                    <div class="info-block philosophy">
+                        <h2><i class="fas fa-lightbulb"></i> Творческая философия</h2>
+                        <div class="philosophy-content">
+                            <div class="quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>"[Цитата художника о творчестве, искусстве или вдохновении]"</p>
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p>[Развернутое описание творческой философии: что вдохновляет, какие темы исследуются, какова цель творчества.]</p>
+                            <p>[Второй абзац: как философия реализуется в конкретных работах, сериях, проектах.]</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="about-timeline">
-                    <h2 class="timeline-title">Ключевые этапы творческого пути</h2>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">[Год]</div>
-                            <div class="timeline-content">
-                                <h3>[Событие 1]</h3>
-                                <p>[Описание события, например: Окончание художественного института]</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-date">[Год]</div>
-                            <div class="timeline-content">
-                                <h3>[Событие 2]</h3>
-                                <p>[Описание события, например: Первая персональная выставка]</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-date">[Год]</div>
-                            <div class="timeline-content">
-                                <h3>[Событие 3]</h3>
-                                <p>[Описание события, например: Участие в международной выставке]</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-date">[Год]</div>
-                            <div class="timeline-content">
-                                <h3>[Событие 4]</h3>
-                                <p>[Описание события, например: Создание новой серии работ]</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-date">[Год]</div>
-                            <div class="timeline-content">
-                                <h3>[Событие 5]</h3>
-                                <p>[Описание события, например: Открытие онлайн-студии]</p>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            
+            <!-- Призыв к действию -->
+            <div class="about-cta">
+                <div class="cta-content">
+                    <h2>Заинтересованы в сотрудничестве?</h2>
+                    <p>Готовы обсудить проект, заказать картину или просто поговорить об искусстве?</p>
+                    <a href="#footer" class="btn btn-primary">Связаться со мной</a>
                 </div>
             </div>
         </div>

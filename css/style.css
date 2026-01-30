@@ -114,8 +114,7 @@ img {
 
 .btn-primary:hover {
     background-color: #7a8a7c;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--shadow-color);
+    color: var(--color-white);
 }
 
 .btn-secondary {
@@ -125,7 +124,7 @@ img {
 
 .btn-secondary:hover {
     background-color: #d4b9b9;
-    transform: translateY(-2px);
+    color: var(--color-dark-gray);
 }
 
 .btn-outline {
@@ -137,7 +136,6 @@ img {
 .btn-outline:hover {
     background-color: var(--color-green);
     color: var(--color-white);
-    transform: translateY(-2px);
 }
 
 .btn-large {
@@ -162,7 +160,7 @@ img {
     background-color: var(--color-light-pink);
 }
 
-/* Хедер */
+/* Хедер - исправленная навигация */
 .header {
     position: fixed;
     top: 0;
@@ -790,12 +788,6 @@ section {
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
-}
-
-.modal-overlay.active .modal-content {
-    transform: translateY(0);
 }
 
 .modal-close {

@@ -30,14 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Инициализация форм
     initForms();
     
-    // Инициализация анимаций при скролле
-    initScrollAnimations();
-    
     // Инициализация модальных окон
     initModals();
 });
 
-// Мобильное меню
+// Мобильное меню - исправленная версия
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -46,6 +43,13 @@ function initMobileMenu() {
         menuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Блокировка скролла при открытом меню
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
         
         // Закрытие меню при клике на ссылку
@@ -54,6 +58,7 @@ function initMobileMenu() {
             link.addEventListener('click', function() {
                 menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
+                document.body.style.overflow = '';
             });
         });
     }
@@ -66,6 +71,7 @@ function initMobileMenu() {
             navMenu.classList.contains('active')) {
             menuToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
 }
@@ -180,11 +186,9 @@ function initPortfolioFilters() {
                     item.style.display = 'block';
                     setTimeout(() => {
                         item.style.opacity = '1';
-                        item.style.transform = 'scale(1)';
                     }, 10);
                 } else {
                     item.style.opacity = '0';
-                    item.style.transform = 'scale(0.8)';
                     setTimeout(() => {
                         item.style.display = 'none';
                     }, 300);
@@ -197,8 +201,7 @@ function initPortfolioFilters() {
     const loadMoreBtn = document.getElementById('load-more-btn');
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function() {
-            // В реальном проекте здесь будет загрузка дополнительных работ с сервера
-            alert('В реальном проекте здесь будет загрузка дополнительных работ с сервера');
+            alert('Здесь будет загрузка дополнительных работ');
             this.style.display = 'none';
         });
     }
@@ -325,8 +328,7 @@ function initForms() {
             const email = emailInput.value.trim();
             
             if (validateEmail(email)) {
-                // В реальном проекте здесь будет отправка на сервер
-                alert('Спасибо за подписку! Вы будете получать уведомления о новых работах и выставках.');
+                alert('Спасибо за подписку!');
                 emailInput.value = '';
             } else {
                 alert('Пожалуйста, введите корректный email адрес.');
@@ -357,7 +359,6 @@ function initForms() {
             });
             
             if (isValid) {
-                // В реальном проекте здесь будет отправка формы на сервер
                 alert('Спасибо за вашу заявку! Я свяжусь с вами в течение 24 часов для обсуждения деталей вашей картины.');
                 this.reset();
             } else {
@@ -373,90 +374,67 @@ function initForms() {
     }
 }
 
-// Анимации при скролле
-function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.fade-in, .timeline-item, .step');
-    
-    // Функция проверки видимости элемента
-    function checkVisibility() {
-        animatedElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementBottom = element.getBoundingClientRect().bottom;
-            const windowHeight = window.innerHeight;
-            
-            // Если элемент виден в области просмотра
-            if (elementTop < windowHeight * 0.9 && elementBottom > 0) {
-                element.classList.add('visible');
-            }
-        });
-    }
-    
-    // Проверяем при загрузке и при скролле
-    checkVisibility();
-    window.addEventListener('scroll', checkVisibility);
-}
-
 // Модальные окна
 function initModals() {
     // Модальное окно для деталей работы в портфолио
     const viewButtons = document.querySelectorAll('.view-details');
     const workModal = document.getElementById('work-modal');
     
-    // Данные для работ (в реальном проекте будут загружаться с сервера)
+    // Данные для работ
     const worksData = {
         1: {
             title: '"Рассвет над полем"',
             details: 'Масло, холст • 80×60 см • 2024',
-            description: 'Эта работа была создана ранним утром в подмосковном поле. Я стремилась передать не только визуальную красоту рассвета, но и то чувство умиротворения и обновления, которое приходит с первыми лучами солнца. Текстура масла позволяет создать эффект легкой дымки, окутывающей поле.',
+            description: '...',
             image: 'images/portfolio/work1.jpg',
             price: '45 000 ₽'
         },
         2: {
             title: '"Городские тени"',
             details: 'Акрил, смешанная техника • 100×70 см • 2023',
-            description: 'Городской пейзаж, исследующий игру света и тени в архитектурном пространстве. Смешанная техника с использованием акрила и текстурных паст создает эффект рельефа, подчеркивая грубую фактуру городских стен и плавность теней.',
+            description: '...',
             image: 'images/portfolio/work2.jpg',
             price: '38 000 ₽'
         },
         3: {
             title: '"Тишина моря"',
             details: 'Масло, холст • 90×60 см • 2024',
-            description: 'Абстрактная интерпретация морского пейзажа, где цвет и текстура передают не столько визуальный образ, сколько эмоциональное состояние спокойствия и безмятежности, которое дарит море.',
+            description: '...',
             image: 'images/portfolio/work3.jpg',
             price: '52 000 ₽'
         },
         4: {
             title: '"Линии города"',
             details: 'Уголь, бумага • 50×70 см • 2023',
-            description: 'Графическая работа, исследующая геометрию и ритм городской архитектуры. Уголь позволяет создавать глубокие, насыщенные тени и четкие линии, подчеркивающие строгость и лаконичность городских форм.',
+            description: '...',
             image: 'images/portfolio/work4.jpg',
             price: '18 000 ₽'
         },
         5: {
             title: '"Вечерние огни"',
             details: 'Акрил, холст • 70×90 см • 2022',
-            description: 'Картина из серии городских пейзажей, передающая магию вечернего города, когда зажигаются огни и город преображается. Теплые и холодные оттенки создают контраст между искусственным освещением и естественной темнотой ночи.',
+            description: '...',
             image: 'images/portfolio/work5.jpg',
             price: '42 000 ₽'
         },
         6: {
             title: '"Портрет"',
             details: 'Карандаш, бумага • 40×50 см • 2021',
-            description: 'Карандашный портрет, выполненный с натуры. Работа сосредоточена на передаче не только внешнего сходства, но и внутреннего состояния модели, ее характера и эмоций через тонкую работу со светотенью.',
+            description: '...',
             image: 'images/portfolio/work6.jpg',
             price: '15 000 ₽'
         },
         7: {
             title: '"Осенний лес"',
             details: 'Масло, холст • 80×100 см • 2023',
-            description: 'Осенний пейзаж, передающий богатство и многообразие осенних красок. Работа выполнена в технике импасто, что создает эффект объемности и позволяет зрителю буквально почувствовать фактуру листвы и коры деревьев.',
+            description: '...',
             image: 'images/portfolio/work7.jpg',
             price: '48 000 ₽'
         },
         8: {
             title: '"Метро"',
             details: 'Акрил, смешанная техника • 90×120 см • 2024',
-            description: 'Крупноформатная работа из городской серии, посвященная пространству метро. Смешанная техника с использованием акрила, песка и металлической пудры создает эффект движения, шума и энергии подземного города.',
+            description: '...',
             image: 'images/portfolio/work8.jpg',
             price: '68 000 ₽'
         }
@@ -491,7 +469,7 @@ function initModals() {
         closeButtons.forEach(btn => {
             btn.addEventListener('click', function() {
                 workModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                document.body.style.overflow = '';
             });
         });
         
@@ -499,7 +477,7 @@ function initModals() {
         workModal.addEventListener('click', function(e) {
             if (e.target === this) {
                 this.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                document.body.style.overflow = '';
             }
         });
         
@@ -507,7 +485,7 @@ function initModals() {
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && workModal.classList.contains('active')) {
                 workModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                document.body.style.overflow = '';
             }
         });
     }

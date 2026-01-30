@@ -2,28 +2,24 @@
 
 /* Планшеты (768px - 1023px) */
 @media (max-width: 1023px) {
-    /* Хедер и навигация */
+    /* Хедер и навигация - исправленная */
     .nav-menu {
         position: fixed;
         top: var(--header-height);
-        left: 0;
+        left: -100%;
         width: 100%;
+        height: calc(100vh - var(--header-height));
         background-color: var(--color-white);
         flex-direction: column;
         align-items: center;
         padding: 30px 20px;
-        box-shadow: 0 10px 20px var(--shadow-color);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
+        transition: left 0.3s ease;
         z-index: 999;
+        overflow-y: auto;
     }
     
     .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+        left: 0;
     }
     
     .menu-toggle {

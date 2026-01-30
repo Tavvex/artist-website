@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог и новости | Александра Волкова</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Александра Волкова</span>
+                    <span class="logo-subtitle">художник</span>
+                </a>
+                
+                <button class="menu-toggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="portfolio.html">Портфолио</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="shop.html">Магазин и заказы</a></li>
+                    <li><a href="blog.html" class="active">Блог</a></li>
+                    <li><a href="#footer" class="contact-btn">Связаться</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <a href="shop.html" class="cart-icon" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Блог -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="page-title">Блог и новости</h1>
+                <p class="page-subtitle">Мысли о творчестве, процессе работы и предстоящих событиях</p>
+            </div>
+            
+            <div class="blog-content">
+                <div class="blog-posts">
+                    <!-- Пост 1 -->
+                    <article class="blog-post">
+                        <div class="post-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">мая</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-image">
+                                <img src="images/blog/post1.jpg" alt="Работа над новой картиной">
+                            </div>
+                            
+                            <div class="post-info">
+                                <h2 class="post-title">Начало новой серии: "Городские ритмы"</h2>
+                                <p class="post-excerpt">В этом посте я хочу рассказать о начале работы над новой серией картин, посвященных ритму современного города и его отражению в нашей повседневности.</p>
+                                
+                                <div class="post-meta">
+                                    <span class="post-category">Творческий процесс</span>
+                                    <span class="post-read-time">5 мин чтения</span>
+                                </div>
+                                
+                                <a href="#" class="post-read-more">Читать полностью</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Пост 2 -->
+                    <article class="blog-post">
+                        <div class="post-date">
+                            <span class="date-day">28</span>
+                            <span class="date-month">апр</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-image">
+                                <img src="images/blog/post2.jpg" alt="Выставка в галерее">
+                            </div>
+                            
+                            <div class="post-info">
+                                <h2 class="post-title">Итоги весенней выставки в галерее "Арт-Сфера"</h2>
+                                <p class="post-excerpt">Неделя выставки подошла к концу, и я хочу поделиться впечатлениями, отзывами и мыслями о том, как прошло это важное для меня событие.</p>
+                                
+                                <div class="post-meta">
+                                    <span class="post-category">Выставки</span>
+                                    <span class="post-read-time">7 мин чтения</span>
+                                </div>
+                                
+                                <a href="#" class="post-read-more">Читать полностью</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Пост 3 -->
+                    <article class="blog-post">
+                        <div class="post-date">
+                            <span class="date-day">12</span>
+                            <span class="date-month">апр</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-image">
+                                <img src="images/blog/post3.jpg" alt="Материалы для живописи">
+                            </div>
+                            
+                            <div class="post-info">
+                                <h2 class="post-title">Мои любимые материалы: от кистей до холстов</h2>
+                                <p class="post-excerpt">Часто спрашивают, с какими материалами я работаю. В этом посте делюсь своим арсеналом художника и рассказываю, почему выбрала именно эти инструменты.</p>
+                                
+                                <div class="post-meta">
+                                    <span class="post-category">Материалы</span>
+                                    <span class="post-read-time">6 мин чтения</span>
+                                </div>
+                                
+                                <a href="#" class="post-read-more">Читать полностью</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Пост 4 -->
+                    <article class="blog-post">
+                        <div class="post-date">
+                            <span class="date-day">30</span>
+                            <span class="date-month">мар</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-image">
+                                <img src="images/blog/post4.jpg" alt="В поисках вдохновения">
+                            </div>
+                            
+                            <div class="post-info">
+                                <h2 class="post-title">Где искать вдохновение, когда его нет?</h2>
+                                <p class="post-excerpt">Творческие кризисы случаются у каждого художника. В этом посте делюсь своими способами вернуться к работе, когда кажется, что вдохновение покинуло навсегда.</p>
+                                
+                                <div class="post-meta">
+                                    <span class="post-category">Мысли о творчестве</span>
+                                    <span class="post-read-time">8 мин чтения</span>
+                                </div>
+                                
+                                <a href="#" class="post-read-more">Читать полностью</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Пост 5 -->
+                    <article class="blog-post">
+                        <div class="post-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">мар</span>
+                            <span class="date-year">2024</span>
+                        </div>
+                        
+                        <div class="post-content">
+                            <div class="post-image">
+                                <img src="images/blog/post5.jpg" alt="Мастер-класс по живописи">
+                            </div>
+                            
+                            <div class="post-info">
+                                <h2 class="post-title">Первый мастер-класс: как это было</h2>
+                                <p class="post-excerpt">На прошлой неделе я провела свой первый мастер-класс по основам живописи. Рассказываю о подготовке, волнении и радости от общения с участниками.</p>
+                                
+                                <div class="post-meta">
+                                    <span class="post-category">Мастер-классы</span>
+                                    <span class="post-read-time">5 мин чтения</span>
+                                </div>
+                                
+                                <a href="#" class="post-read-more">Читать полностью</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <aside class="blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Категории</h3>
+                        <ul class="category-list">
+                            <li><a href="#" class="active">Все записи</a></li>
+                            <li><a href="#">Творческий процесс</a></li>
+                            <li><a href="#">Выставки</a></li>
+                            <li><a href="#">Материалы</a></li>
+                            <li><a href="#">Мысли о творчестве</a></li>
+                            <li><a href="#">Мастер-классы</a></li>
+                            <li><a href="#">Новости</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Ближайшие события</h3>
+                        <div class="event-list">
+                            <div class="event">
+                                <div class="event-date">
+                                    <span>25</span>
+                                    <span>мая</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Открытие летней выставки</h4>
+                                    <p>Галерея "Современник", Москва</p>
+                                </div>
+                            </div>
+                            
+                            <div class="event">
+                                <div class="event-date">
+                                    <span>10</span>
+                                    <span>июн</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Мастер-класс "Цвет и эмоция"</h4>
+                                    <p>Студия на Винзаводе</p>
+                                </div>
+                            </div>
+                            
+                            <div class="event">
+                                <div class="event-date">
+                                    <span>15</span>
+                                    <span>июл</span>
+                                </div>
+                                <div class="event-info">
+                                    <h4>Участие в арт-ярмарке</h4>
+                                    <p>ЦДХ, Москва</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3 class="widget-title">Подписка на обновления</h3>
+                        <p>Получайте уведомления о новых записях в блоге и предстоящих событиях</p>
+                        <form class="sidebar-newsletter">
+                            <input type="email" placeholder="Ваш email" required>
+                            <button type="submit" class="btn btn-primary">Подписаться</button>
+                        </form>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Популярные теги</h3>
+                        <div class="tag-cloud">
+                            <a href="#">живопись</a>
+                            <a href="#">масло</a>
+                            <a href="#">абстракция</a>
+                            <a href="#">город</a>
+                            <a href="#">цвет</a>
+                            <a href="#">текстура</a>
+                            <a href="#">выставка</a>
+                            <a href="#">вдохновение</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <div class="blog-pagination">
+                <a href="#" class="pagination-btn active">1</a>
+                <a href="#" class="pagination-btn">2</a>
+                <a href="#" class="pagination-btn">3</a>
+                <span class="pagination-dots">...</span>
+                <a href="#" class="pagination-btn">5</a>
+                <a href="#" class="pagination-btn next">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-text">Александра Волкова</span>
+                        <span class="logo-subtitle">художник</span>
+                    </a>
+                    <p class="footer-tagline">Исследую границы живописи через диалог материи и воображения</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Для сотрудничества и заказов</h3>
+                    <ul class="footer-contacts">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hello@alexandravolkova.art">hello@alexandravolkova.art</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79161234567">+7 (916) 123-45-67</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Москва, студия на Винзаводе</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Я в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://behance.net" target="_blank" aria-label="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <p>Подпишитесь на новости о выставках</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Ваш email" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Александра Волкова. Все права защищены.</p>
+                <a href="#" class="privacy-link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

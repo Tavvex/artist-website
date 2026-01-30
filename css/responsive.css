@@ -1,0 +1,384 @@
+/* Адаптивные стили для сайта художника */
+
+/* Планшеты (768px - 1023px) */
+@media (max-width: 1023px) {
+    /* Хедер и навигация */
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--color-white);
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        box-shadow: 0 10px 20px var(--shadow-color);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Герой-секция */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Секции */
+    section {
+        padding: 60px 0;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Портфолио и магазин */
+    .works-grid,
+    .portfolio-grid,
+    .shop-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    /* О художнике */
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image,
+    .about-text {
+        width: 100%;
+    }
+    
+    /* Футер */
+    .footer-content {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    /* Блог */
+    .blog-post {
+        flex-direction: column;
+    }
+    
+    .post-date {
+        align-self: flex-start;
+    }
+    
+    .post-image img {
+        height: 250px;
+    }
+    
+    /* Корзина */
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .cart-item-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .cart-item-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    /* Модальное окно */
+    .modal-body {
+        flex-direction: column;
+        padding: 20px;
+    }
+}
+
+/* Мобильные устройства (до 767px) */
+@media (max-width: 767px) {
+    /* Общие стили */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Хедер */
+    .logo-text {
+        font-size: 1.2rem;
+    }
+    
+    .header-actions {
+        gap: 0.5rem;
+    }
+    
+    /* Герой-секция */
+    .hero {
+        height: 80vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .slider-prev,
+    .slider-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Секции */
+    section {
+        padding: 40px 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    /* Карточки */
+    .works-grid,
+    .portfolio-grid,
+    .shop-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    /* Кнопки фильтров */
+    .portfolio-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+    }
+    
+    /* О художнике */
+    .about-main {
+        gap: 30px;
+    }
+    
+    .about-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-card {
+        padding: 20px;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        padding-left: 50px;
+    }
+    
+    .timeline-date {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+    
+    /* Магазин */
+    .shop-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        border-bottom: none;
+    }
+    
+    .tab-btn {
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        text-align: left;
+    }
+    
+    .tab-btn.active::after {
+        display: none;
+    }
+    
+    .shop-filters {
+        flex-direction: column;
+    }
+    
+    .filter-select {
+        min-width: 100%;
+    }
+    
+    .custom-order-content {
+        gap: 40px;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-form {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Футер */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        border-right: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-btn {
+        border-radius: var(--border-radius);
+        padding: 12px 20px;
+    }
+    
+    /* Блог */
+    .blog-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-sidebar {
+        position: static;
+    }
+    
+    .blog-pagination {
+        flex-wrap: wrap;
+    }
+    
+    /* Модальное окно */
+    .modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .modal-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+    /* Типография */
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Герой-секция */
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Кнопки */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Карточки */
+    .work-info,
+    .portfolio-info,
+    .shop-info {
+        padding: 15px;
+    }
+    
+    /* О художнике */
+    .about-quote {
+        padding: 20px;
+    }
+    
+    .about-quote p {
+        font-size: 1rem;
+    }
+    
+    /* Корзина */
+    .cart-item-details h3 {
+        font-size: 1rem;
+    }
+    
+    /* Блог */
+    .post-date {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .date-day {
+        font-size: 1.5rem;
+    }
+    
+    .post-image img {
+        height: 200px;
+    }
+}

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин и заказы | Александра Волкова</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Александра Волкова</span>
+                    <span class="logo-subtitle">художник</span>
+                </a>
+                
+                <button class="menu-toggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="portfolio.html">Портфолио</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="shop.html" class="active">Магазин и заказы</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="#footer" class="contact-btn">Связаться</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <a href="shop.html" class="cart-icon" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Магазин и заказы -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-header">
+                <h1 class="page-title">Магазин и заказы</h1>
+                <p class="page-subtitle">Приобретите готовые работы или закажите картину по вашим эскизам</p>
+            </div>
+            
+            <div class="shop-tabs">
+                <button class="tab-btn active" data-tab="ready-works">Готовые работы</button>
+                <button class="tab-btn" data-tab="custom-order">Картина на заказ</button>
+                <button class="tab-btn" id="cart-tab" data-tab="cart">
+                    Корзина <span class="cart-tab-count">0</span>
+                </button>
+            </div>
+            
+            <!-- Вкладка "Готовые работы" -->
+            <div class="tab-content active" id="ready-works">
+                <div class="shop-filters">
+                    <select class="filter-select" id="price-filter">
+                        <option value="all">Все цены</option>
+                        <option value="low">До 20 000 ₽</option>
+                        <option value="medium">20 000 - 50 000 ₽</option>
+                        <option value="high">От 50 000 ₽</option>
+                    </select>
+                    
+                    <select class="filter-select" id="size-filter">
+                        <option value="all">Все размеры</option>
+                        <option value="small">Малые (до 60 см)</option>
+                        <option value="medium">Средние (60-100 см)</option>
+                        <option value="large">Крупные (от 100 см)</option>
+                    </select>
+                    
+                    <select class="filter-select" id="technique-filter">
+                        <option value="all">Все техники</option>
+                        <option value="oil">Масло</option>
+                        <option value="acrylic">Акрил</option>
+                        <option value="mixed">Смешанная техника</option>
+                        <option value="graphics">Графика</option>
+                    </select>
+                </div>
+                
+                <div class="shop-grid">
+                    <!-- Товар 1 -->
+                    <div class="shop-item" data-price="45000" data-size="medium" data-technique="oil">
+                        <div class="shop-card">
+                            <div class="shop-image">
+                                <img src="images/shop/work1.jpg" alt="Картина 'Рассвет над полем'">
+                                <div class="shop-overlay">
+                                    <button class="quick-view" data-product="1">Быстрый просмотр</button>
+                                </div>
+                            </div>
+                            <div class="shop-info">
+                                <h3>"Рассвет над полем"</h3>
+                                <p class="shop-details">Масло, холст • 80×60 см • 2024</p>
+                                <p class="shop-price">45 000 ₽</p>
+                                <div class="shop-actions">
+                                    <button class="btn btn-primary add-to-cart" data-product="1">В корзину</button>
+                                    <button class="btn-icon wishlist-btn" aria-label="Добавить в избранное">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 2 -->
+                    <div class="shop-item" data-price="38000" data-size="medium" data-technique="acrylic">
+                        <div class="shop-card">
+                            <div class="shop-image">
+                                <img src="images/shop/work2.jpg" alt="Картина 'Городские тени'">
+                                <div class="shop-overlay">
+                                    <button class="quick-view" data-product="2">Быстрый просмотр</button>
+                                </div>
+                            </div>
+                            <div class="shop-info">
+                                <h3>"Городские тени"</h3>
+                                <p class="shop-details">Акрил, смешанная техника • 100×70 см • 2023</p>
+                                <p class="shop-price">38 000 ₽</p>
+                                <div class="shop-actions">
+                                    <button class="btn btn-primary add-to-cart" data-product="2">В корзину</button>
+                                    <button class="btn-icon wishlist-btn" aria-label="Добавить в избранное">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 3 -->
+                    <div class="shop-item" data-price="52000" data-size="large" data-technique="oil">
+                        <div class="shop-card">
+                            <div class="shop-image">
+                                <img src="images/shop/work3.jpg" alt="Картина 'Тишина моря'">
+                                <div class="shop-overlay">
+                                    <button class="quick-view" data-product="3">Быстрый просмотр</button>
+                                </div>
+                            </div>
+                            <div class="shop-info">
+                                <h3>"Тишина моря"</h3>
+                                <p class="shop-details">Масло, холст • 90×60 см • 2024</p>
+                                <p class="shop-price">52 000 ₽</p>
+                                <div class="shop-actions">
+                                    <button class="btn btn-primary add-to-cart" data-product="3">В корзину</button>
+                                    <button class="btn-icon wishlist-btn" aria-label="Добавить в избранное">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 4 -->
+                    <div class="shop-item" data-price="18000" data-size="small" data-technique="graphics">
+                        <div class="shop-card">
+                            <div class="shop-image">
+                                <img src="images/shop/work4.jpg" alt="Рисунок 'Линии города'">
+                                <div class="shop-overlay">
+                                    <button class="quick-view" data-product="4">Быстрый просмотр</button>
+                                </div>
+                            </div>
+                            <div class="shop-info">
+                                <h3>"Линии города"</h3>
+                                <p class="shop-details">Уголь, бумага • 50×70 см • 2023</p>
+                                <p class="shop-price">18 000 ₽</p>
+                                <div class="shop-actions">
+                                    <button class="btn btn-primary add-to-cart" data-product="4">В корзину</button>
+                                    <button class="btn-icon wishlist-btn" aria-label="Добавить в избранное">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 5 -->
+                    <div class="shop-item" data-price="42000" data-size="medium" data-technique="acrylic">
+                        <div class="shop-card">
+                            <div class="shop-image">
+                                <img src="images/shop/work5.jpg" alt="Картина 'Вечерние огни'">
+                                <div class="shop-overlay">
+                                    <button class="quick-view" data-product="5">Быстрый просмотр</button>
+                                </div>
+                            </div>
+                            <div class="shop-info">
+                                <h3>"Вечерние огни"</h3>
+                                <p class="shop-details">Акрил, холст • 70×90 см • 2022</p>
+                                <p class="shop-price">42 000 ₽</p>
+                                <div class="shop-actions">
+                                    <button class="btn btn-primary add-to-cart" data-product="5">В корзину</button>
+                                    <button class="btn-icon wishlist-btn" aria-label="Добавить в избранное">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 6 -->
+                    <div class="shop-item" data-price="15000" data-size="small" data-technique="graphics">
+                        <div class="shop-card">
+                            <div class="shop-image">
+                                <img src="images/shop/work6.jpg" alt="Рисунок 'Портрет'">
+                                <div class="shop-overlay">
+                                    <button class="quick-view" data-product="6">Быстрый просмотр</button>
+                                </div>
+                            </div>
+                            <div class="shop-info">
+                                <h3>"Портрет"</h3>
+                                <p class="shop-details">Карандаш, бумага • 40×50 см • 2021</p>
+                                <p class="shop-price">15 000 ₽</p>
+                                <div class="shop-actions">
+                                    <button class="btn btn-primary add-to-cart" data-product="6">В корзину</button>
+                                    <button class="btn-icon wishlist-btn" aria-label="Добавить в избранное">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="shop-info-box">
+                    <h3><i class="fas fa-shipping-fast"></i> Доставка и оплата</h3>
+                    <p>Все работы тщательно упаковываются и отправляются надежными транспортными компаниями. Доставка по Москве — 1 000 ₽, по России — от 1 500 ₽. Международная доставка рассчитывается индивидуально. Оплата банковской картой или по счету.</p>
+                </div>
+            </div>
+            
+            <!-- Вкладка "Картина на заказ" -->
+            <div class="tab-content" id="custom-order">
+                <div class="custom-order-content">
+                    <div class="order-process">
+                        <h2>Процесс создания картины на заказ</h2>
+                        <p>Каждая картина на заказ — это уникальный проект, создаваемый в тесном диалоге с заказчиком.</p>
+                        
+                        <div class="process-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <h3>Обсуждение идеи</h3>
+                                <p>Вы рассказываете о вашем видении: тема, цветовая гамма, размер, стиль. Можно прислать референсы, фотографии, эскизы.</p>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <h3>Эскиз и согласование</h3>
+                                <p>Я создаю несколько эскизных вариантов, которые мы вместе обсуждаем и дорабатываем до идеального решения.</p>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <h3>Работа над холстом</h3>
+                                <p>После утверждения эскиза и внесения предоплаты (30%) начинается работа над картиной. На этом этапе я могу делиться с вами промежуточными результатами.</p>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <h3>Готовность и доставка</h3>
+                                <p>Готовая работа фотографируется, и вы получаете фото для финального подтверждения. После полной оплаты картина упаковывается и отправляется вам.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pricing-info">
+                            <h3>Стоимость работы на заказ</h3>
+                            <p>Цена рассчитывается индивидуально и зависит от сложности сюжета, размера картины, используемых материалов и сроков исполнения. Ориентировочный диапазон:</p>
+                            <ul>
+                                <li>Небольшие работы (до 60 см): от 30 000 ₽</li>
+                                <li>Средние работы (60-100 см): от 50 000 ₽</li>
+                                <li>Крупные работы (от 100 см): от 80 000 ₽</li>
+                            </ul>
+                            <p><em>Точную стоимость обсудим после определения всех деталей будущей работы.</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="order-form-container">
+                        <h2>Форма для заказа картины</h2>
+                        <p>Заполните форму, и я свяжусь с вами в течение 24 часов для обсуждения деталей.</p>
+                        
+                        <form class="order-form" id="custom-order-form">
+                            <div class="form-group">
+                                <label for="order-name">Ваше имя *</label>
+                                <input type="text" id="order-name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-email">Email *</label>
+                                <input type="email" id="order-email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-phone">Телефон</label>
+                                <input type="tel" id="order-phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-size">Желаемый размер</label>
+                                <select id="order-size" name="size">
+                                    <option value="">Выберите размер</option>
+                                    <option value="small">Малый (до 60 см)</option>
+                                    <option value="medium">Средний (60-100 см)</option>
+                                    <option value="large">Крупный (от 100 см)</option>
+                                    <option value="custom">Нестандартный размер</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-technique">Предпочтительная техника</label>
+                                <select id="order-technique" name="technique">
+                                    <option value="">Выберите технику</option>
+                                    <option value="oil">Масло</option>
+                                    <option value="acrylic">Акрил</option>
+                                    <option value="mixed">Смешанная техника</option>
+                                    <option value="not-sure">Не знаю, нужна консультация</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-budget">Предполагаемый бюджет</label>
+                                <select id="order-budget" name="budget">
+                                    <option value="">Выберите бюджет</option>
+                                    <option value="30-50">30 000 - 50 000 ₽</option>
+                                    <option value="50-80">50 000 - 80 000 ₽</option>
+                                    <option value="80-120">80 000 - 120 000 ₽</option>
+                                    <option value="120+">От 120 000 ₽</option>
+                                    <option value="not-sure">Не определился, нужна консультация</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="order-idea">Опишите вашу идею *</label>
+                                <textarea id="order-idea" name="idea" rows="5" required placeholder="Опишите, какую картину вы хотите: тему, сюжет, цветовую гамму, эмоцию, которую должна передавать работа..."></textarea>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="order-references">Ссылки на референсы (если есть)</label>
+                                <textarea id="order-references" name="references" rows="3" placeholder="Ссылки на изображения в Pinterest, Instagram или других ресурсах, которые помогут понять ваше видение"></textarea>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="order-deadline">Желаемый срок исполнения</label>
+                                <input type="text" id="order-deadline" name="deadline" placeholder="Например: 2 месяца, к конкретной дате, без срочности">
+                            </div>
+                            
+                            <div class="form-submit">
+                                <button type="submit" class="btn btn-primary btn-large">Отправить заявку на картину</button>
+                                <p class="form-note">После отправки формы я свяжусь с вами для уточнения деталей и обсуждения эскиза.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="order-examples">
+                    <h3>Примеры выполненных заказов</h3>
+                    <div class="examples-grid">
+                        <div class="example">
+                            <img src="images/shop/custom1.jpg" alt="Картина на заказ 'Семейный портрет'">
+                            <p>"Семейный портрет в интерьере", 2023</p>
+                        </div>
+                        <div class="example">
+                            <img src="images/shop/custom2.jpg" alt="Картина на заказ 'Городской пейзаж'">
+                            <p>"Городской пейзаж для офиса", 2022</p>
+                        </div>
+                        <div class="example">
+                            <img src="images/shop/custom3.jpg" alt="Картина на заказ 'Абстракция'">
+                            <p>"Абстракция для гостиной", 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вкладка "Корзина" -->
+            <div class="tab-content" id="cart">
+                <div class="cart-container">
+                    <div class="cart-header">
+                        <h2>Ваша корзина</h2>
+                        <p id="cart-summary">В корзине 0 товаров</p>
+                    </div>
+                    
+                    <div class="cart-items" id="cart-items">
+                        <!-- Товары будут добавляться динамически -->
+                        <div class="empty-cart">
+                            <i class="fas fa-shopping-bag"></i>
+                            <p>Ваша корзина пуста</p>
+                            <a href="shop.html" class="btn btn-primary">Перейти к покупкам</a>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-summary" id="cart-summary-details">
+                        <div class="summary-row">
+                            <span>Итого:</span>
+                            <span id="cart-total">0 ₽</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Доставка:</span>
+                            <span id="cart-shipping">рассчитывается индивидуально</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>К оплате:</span>
+                            <span id="cart-grand-total">0 ₽</span>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-large btn-checkout" id="checkout-btn" disabled>Оформить заказ</button>
+                        <p class="cart-note">После оформления заказа я свяжусь с вами для уточнения деталей доставки и оплаты.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-text">Александра Волкова</span>
+                        <span class="logo-subtitle">художник</span>
+                    </a>
+                    <p class="footer-tagline">Исследую границы живописи через диалог материи и воображения</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Для сотрудничества и заказов</h3>
+                    <ul class="footer-contacts">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hello@alexandravolkova.art">hello@alexandravolkova.art</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79161234567">+7 (916) 123-45-67</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Москва, студия на Винзаводе</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Я в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://behance.net" target="_blank" aria-label="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <p>Подпишитесь на новости о выставках</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Ваш email" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Александра Волкова. Все права защищены.</p>
+                <a href="#" class="privacy-link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно быстрого просмотра товара -->
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрыть">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-product-image" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-product-title"></h2>
+                    <p id="modal-product-details"></p>
+                    <p class="modal-price" id="modal-product-price"></p>
+                    <div class="modal-description">
+                        <p id="modal-product-description"></p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" id="modal-add-to-cart">Добавить в корзину</button>
+                        <button class="btn btn-outline modal-close-btn">Продолжить просмотр</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

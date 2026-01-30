@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Александра Волкова | Художник</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Александра Волкова</span>
+                    <span class="logo-subtitle">художник</span>
+                </a>
+                
+                <button class="menu-toggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="portfolio.html">Портфолио</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="shop.html">Магазин и заказы</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="#footer" class="contact-btn">Связаться</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <a href="shop.html" class="cart-icon" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hero/painting1.jpg');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Цвет. Форма. Эмоция.</h1>
+                        <p class="hero-subtitle">Исследую границы живописи через диалог материи и воображения</p>
+                        <div class="hero-buttons">
+                            <a href="portfolio.html" class="btn btn-primary">Смотреть работы</a>
+                            <a href="shop.html#custom-order" class="btn btn-secondary">Заказать картину</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/hero/painting2.jpg');">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Где реальность встречает абстракцию</h1>
+                        <p class="hero-subtitle">Каждая работа — история в цвете и текстуре</p>
+                        <div class="hero-buttons">
+                            <a href="portfolio.html" class="btn btn-primary">Смотреть работы</a>
+                            <a href="shop.html#custom-order" class="btn btn-secondary">Заказать картину</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slider-prev" aria-label="Предыдущий слайд">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-next" aria-label="Следующий слайд">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Избранные работы -->
+    <section class="featured-works">
+        <div class="container">
+            <h2 class="section-title">Избранные работы</h2>
+            <p class="section-subtitle">Недавние картины и проекты</p>
+            
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="images/portfolio/work1.jpg" alt="Картина 'Рассвет над полем'">
+                        <div class="work-overlay">
+                            <a href="portfolio.html#work1" class="view-btn">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>"Рассвет над полем"</h3>
+                        <p>Масло, холст • 80×60 см • 2024</p>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="images/portfolio/work2.jpg" alt="Картина 'Городские тени'">
+                        <div class="work-overlay">
+                            <a href="portfolio.html#work2" class="view-btn">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>"Городские тени"</h3>
+                        <p>Акрил, смешанная техника • 100×70 см • 2023</p>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="images/portfolio/work3.jpg" alt="Картина 'Тишина моря'">
+                        <div class="work-overlay">
+                            <a href="portfolio.html#work3" class="view-btn">Подробнее</a>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>"Тишина моря"</h3>
+                        <p>Масло, холст • 90×60 см • 2024</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="portfolio.html" class="btn btn-outline">Вся галерея</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- О художнике (превью) -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/about/artist.jpg" alt="Александра Волкова в мастерской">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">Несколько слов о себе</h2>
+                    <p>Я создаю картины, которые находятся на стыке фигуративной живописи и абстракции. Моя работа — это исследование эмоций через цвет, текстуру и форму.</p>
+                    <p>Каждая картина начинается с диалога — с материалом, с пространством, с собственным восприятием. Итогом этого диалога становится работа, которая продолжает жить и меняться в воображении зрителя.</p>
+                    <a href="about.html" class="btn btn-primary">Узнать больше</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-text">Александра Волкова</span>
+                        <span class="logo-subtitle">художник</span>
+                    </a>
+                    <p class="footer-tagline">Исследую границы живописи через диалог материи и воображения</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Для сотрудничества и заказов</h3>
+                    <ul class="footer-contacts">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hello@alexandravolkova.art">hello@alexandravolkova.art</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79161234567">+7 (916) 123-45-67</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Москва, студия на Винзаводе</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Я в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://behance.net" target="_blank" aria-label="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <p>Подпишитесь на новости о выставках</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Ваш email" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Александра Волкова. Все права защищены.</p>
+                <a href="#" class="privacy-link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

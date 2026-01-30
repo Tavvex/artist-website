@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Александра Волкова</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Александра Волкова</span>
+                    <span class="logo-subtitle">художник</span>
+                </a>
+                
+                <button class="menu-toggle" aria-label="Меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="portfolio.html" class="active">Портфолио</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="shop.html">Магазин и заказы</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="#footer" class="contact-btn">Связаться</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <a href="shop.html" class="cart-icon" aria-label="Корзина">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Портфолио -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-header">
+                <h1 class="page-title">Портфолио</h1>
+                <p class="page-subtitle">Галерея работ за разные годы и в разных техниках</p>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Все работы</button>
+                <button class="filter-btn" data-filter="painting">Живопись</button>
+                <button class="filter-btn" data-filter="graphics">Графика</button>
+                <button class="filter-btn" data-filter="series-urban">Городская серия</button>
+                <button class="filter-btn" data-filter="series-nature">Природа</button>
+                <button class="filter-btn" data-filter="archive">Архив</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Работа 1 -->
+                <div class="portfolio-item" data-category="painting series-nature">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/work1.jpg" alt="Картина 'Рассвет над полем'">
+                            <div class="portfolio-overlay">
+                                <button class="view-details" data-work="1">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>"Рассвет над полем"</h3>
+                            <p>Масло, холст • 80×60 см • 2024</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Работа 2 -->
+                <div class="portfolio-item" data-category="painting series-urban">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/work2.jpg" alt="Картина 'Городские тени'">
+                            <div class="portfolio-overlay">
+                                <button class="view-details" data-work="2">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>"Городские тени"</h3>
+                            <p>Акрил, смешанная техника • 100×70 см • 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Работа 3 -->
+                <div class="portfolio-item" data-category="painting series-nature">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/work3.jpg" alt="Картина 'Тишина моря'">
+                            <div class="portfolio-overlay">
+                                <button class="view-details" data-work="3">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>"Тишина моря"</h3>
+                            <p>Масло, холст • 90×60 см • 2024</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Работа 4 -->
+                <div class="portfolio-item" data-category="graphics">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/work4.jpg" alt="Рисунок 'Линии города'">
+                            <div class="portfolio-overlay">
+                                <button class="view-details" data-work="4">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>"Линии города"</h3>
+                            <p>Уголь, бумага • 50×70 см • 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Работа 5 -->
+                <div class="portfolio-item" data-category="painting series-urban">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/work5.jpg" alt="Картина 'Вечерние огни'">
+                            <div class="portfolio-overlay">
+                                <button class="view-details" data-work="5">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>"Вечерние огни"</h3>
+                            <p>Акрил, холст • 70×90 см • 2022</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Работа 6 -->
+                <div class="portfolio-item" data-category="graphics archive">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/work6.jpg" alt="Рисунок 'Портрет'">
+                            <div class="portfolio-overlay">
+                                <button class="view-details" data-work="6">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>"Портрет"</h3>
+                            <p>Карандаш, бумага • 40×50 см • 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Работа 7 -->
+                <div class="portfolio-item" data-category="painting series-nature">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/work7.jpg" alt="Картина 'Осенний лес'">
+                            <div class="portfolio-overlay">
+                                <button class="view-details" data-work="7">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>"Осенний лес"</h3>
+                            <p>Масло, холст • 80×100 см • 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Работа 8 -->
+                <div class="portfolio-item" data-category="painting series-urban">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/portfolio/work8.jpg" alt="Картина 'Метро'">
+                            <div class="portfolio-overlay">
+                                <button class="view-details" data-work="8">Подробнее</button>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>"Метро"</h3>
+                            <p>Акрил, смешанная техника • 90×120 см • 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <button class="btn btn-outline" id="load-more-btn">Показать еще работы</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно для деталей работы -->
+    <div class="modal-overlay" id="work-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрыть">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-work-image" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-work-title"></h2>
+                    <p id="modal-work-details"></p>
+                    <div class="modal-description">
+                        <p id="modal-work-description"></p>
+                    </div>
+                    <div class="modal-actions">
+                        <a href="#" class="btn btn-primary" id="modal-buy-btn">Купить эту работу</a>
+                        <button class="btn btn-outline modal-close-btn">Вернуться в галерею</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер (такой же как на главной) -->
+    <footer id="footer" class="footer">
+        <!-- Копируем футер из index.html -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-text">Александра Волкова</span>
+                        <span class="logo-subtitle">художник</span>
+                    </a>
+                    <p class="footer-tagline">Исследую границы живописи через диалог материи и воображения</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Для сотрудничества и заказов</h3>
+                    <ul class="footer-contacts">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hello@alexandravolkova.art">hello@alexandravolkova.art</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+79161234567">+7 (916) 123-45-67</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Москва, студия на Винзаводе</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Я в соцсетях</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://behance.net" target="_blank" aria-label="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="https://pinterest.com" target="_blank" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <p>Подпишитесь на новости о выставках</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Ваш email" required>
+                            <button type="submit" class="newsletter-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Александра Волкова. Все права защищены.</p>
+                <a href="#" class="privacy-link">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

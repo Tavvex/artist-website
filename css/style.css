@@ -523,6 +523,11 @@ section {
     flex: 1;
 }
 
+.about-text p{
+    text-indent: 50px;
+    text-align: justify;
+}
+
 /* Футер */
 .footer {
     background-color: var(--color-light-gray);
@@ -1117,4 +1122,9 @@ section {
 
 .btn-close:hover {
     opacity: 1;
+}
+
+.info-block p.about{
+    text-indent: 50px;
+    text-align: justify;
 }

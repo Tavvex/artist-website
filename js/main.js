@@ -312,52 +312,52 @@ function initModals() {
     function getWorkData(workId) {
         const worksData = {
             1: {
-                title: '"Рассвет над полем"',
-                details: 'Масло, холст • 80×60 см • 2024',
-                description: 'Эта работа была создана ранним утром в подмосковном поле. Я стремилась передать не только визуальную красоту рассвета, но и то чувство умиротворения и обновления, которое приходит с первыми лучами солнца.',
-                image: 'images/portfolio/work1.jpg'
+                title: '"Алан"',
+                details: 'Масло, холст • 60×80 см • 2024',
+                description: '---',
+                image: 'images/portfolio/alan_60-80.jpg'
             },
             2: {
-                title: '"Городские тени"',
-                details: 'Акрил, смешанная техника • 100×70 см • 2023',
-                description: 'Городской пейзаж, исследующий игру света и тени в архитектурном пространстве. Работа передает динамику мегаполиса и моменты тишины между шумом улиц.',
-                image: 'images/portfolio/work2.jpg'
+                title: '"Глоток свежести"',
+                details: 'Масло, холст • 45x60 см • 2026',
+                description: '---',
+                image: 'images/portfolio/freshness_45-60.jpg'
             },
             3: {
-                title: '"Тишина моря"',
-                details: 'Масло, холст • 90×60 см • 2024',
-                description: 'Абстрактная интерпретация морского пейзажа, где цвет и текстура передают эмоциональное состояние спокойствия и безмятежности.',
-                image: 'images/portfolio/work3.jpg'
+                title: '"Портрет"',
+                details: 'Масло, холст • 35x40 см • 2026',
+                description: '---',
+                image: 'images/portfolio/portret_1_35-40.jpg'
             },
             4: {
-                title: '"Линии города"',
-                details: 'Уголь, бумага • 50×70 см • 2023',
-                description: 'Графическая работа, исследующая геометрию и ритм городской архитектуры. Линии и штрихи создают ощущение движения и энергии.',
-                image: 'images/portfolio/work4.jpg'
+                title: '"Портрет"',
+                details: 'Масло, холст • 50x60 см • 2026',
+                description: '---',
+                image: 'images/portfolio/portret_2_35-40.jpg'
             },
             5: {
-                title: '"Вечерние огни"',
-                details: 'Акрил, холст • 70×90 см • 2022',
-                description: 'Картина из серии городских пейзажей, передающая магию вечернего города, когда зажигаются огни и улицы наполняются особым светом.',
-                image: 'images/portfolio/work5.jpg'
+                title: '"Сам себе кукловод"',
+                details: 'Масло, холст • 60×80 см • 2024',
+                description: '---',
+                image: 'images/portfolio/puppeter_60-80.jpg'
             },
             6: {
-                title: '"Портрет"',
-                details: 'Карандаш, бумага • 40×50 см • 2021',
-                description: 'Карандашный портрет, выполненный с натуры. Работа передает характер и внутренний мир модели через тонкие градации света и тени.',
-                image: 'images/portfolio/work6.jpg'
+                title: '"Перерождение"',
+                details: 'Масло, холст • 70x90 см • 2024',
+                description: '---',
+                image: 'images/portfolio/reborn_70-90.jpg'
             },
             7: {
-                title: '"Осенний лес"',
-                details: 'Масло, холст • 80×100 см • 2023',
-                description: 'Пейзаж, запечатлевший красоту осеннего леса. Яркие краски и мягкие переходы создают ощущение тепла и уюта.',
-                image: 'images/portfolio/work7.jpg'
+                title: '"Тишина"',
+                details: 'Масло, холст • 50x70 см • 2025',
+                description: '---',
+                image: 'images/portfolio/silence_50-70.jpg'
             },
             8: {
-                title: '"Метро"',
-                details: 'Акрил, смешанная техника • 90×120 см • 2024',
-                description: 'Работа из серии городских зарисовок, исследующая ритм и движение в подземном пространстве метро.',
-                image: 'images/portfolio/work8.jpg'
+                title: '"Летний денёк"',
+                details: 'Масло, холст • 50x70 см • 2024',
+                description: '---',
+                image: 'images/portfolio/summer_day_50-70.jpg'
             }
         };
         

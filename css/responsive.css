@@ -1,8 +1,7 @@
-/* Адаптивные стили для сайта художника */
+/* Адаптивные стили */
 
 /* Планшеты (768px - 1023px) */
 @media (max-width: 1023px) {
-    /* Хедер - адаптивный дизайн */
     .nav-main {
         position: fixed;
         top: var(--header-height);
@@ -63,10 +62,6 @@
         font-size: 1rem;
     }
     
-    .cart-icon {
-        font-size: 1.3rem;
-    }
-    
     .menu-toggle {
         display: flex;
     }
@@ -83,7 +78,6 @@
         transform: rotate(-45deg) translate(6px, -6px);
     }
     
-    /* Заголовки для мобильных */
     .page-title {
         font-size: 2.2rem;
     }
@@ -96,7 +90,6 @@
         font-size: 1rem;
     }
     
-    /* Секции */
     section {
         padding: 60px 0;
     }
@@ -109,11 +102,6 @@
         font-size: 2rem;
     }
     
-    h3 {
-        font-size: 1.5rem;
-    }
-    
-    /* Секция "Обо мне" */
     .about-main {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -123,26 +111,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .experience-item,
-    .achievement-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .exp-year,
-    .ach-year {
-        padding-bottom: 5px;
-    }
-    
-    /* Портфолио и магазин */
-    .works-grid,
-    .portfolio-grid,
-    .shop-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-    }
-    
-    /* О художнике на главной */
     .about-content {
         flex-direction: column;
     }
@@ -152,7 +120,6 @@
         width: 100%;
     }
     
-    /* Футер */
     .footer-content {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 30px;
@@ -163,52 +130,14 @@
         gap: 15px;
         text-align: center;
     }
-    
-    /* Блог */
-    .blog-post {
-        flex-direction: column;
-    }
-    
-    .post-date {
-        align-self: flex-start;
-    }
-    
-    .post-image img {
-        height: 250px;
-    }
-    
-    /* Корзина */
-    .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .cart-item-image {
-        width: 100%;
-        height: 200px;
-    }
-    
-    .cart-item-actions {
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    /* Модальное окно */
-    .modal-body {
-        flex-direction: column;
-        padding: 20px;
-    }
 }
 
 /* Мобильные устройства (до 767px) */
 @media (max-width: 767px) {
-    /* Общие стили */
     .container {
         padding: 0 15px;
     }
     
-    /* Хедер */
     .logo-text {
         font-size: 1.2rem;
     }
@@ -217,7 +146,6 @@
         font-size: 0.7rem;
     }
     
-    /* Герой-секция */
     .hero {
         height: 80vh;
     }
@@ -240,7 +168,6 @@
         font-size: 1rem;
     }
     
-    /* Секции */
     section {
         padding: 40px 0;
     }
@@ -261,15 +188,11 @@
         font-size: 2rem;
     }
     
-    /* Карточки */
-    .works-grid,
-    .portfolio-grid,
-    .shop-grid {
+    .works-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
     
-    /* Секция "Обо мне" */
     .techniques-grid {
         grid-template-columns: 1fr;
     }
@@ -287,7 +210,6 @@
         padding: 40px 20px;
     }
     
-    /* Кнопки фильтров */
     .portfolio-filters {
         justify-content: flex-start;
         overflow-x: auto;
@@ -301,49 +223,6 @@
         padding: 6px 15px;
     }
     
-    /* Магазин */
-    .shop-tabs {
-        flex-direction: column;
-        align-items: stretch;
-        border-bottom: none;
-    }
-    
-    .tab-btn {
-        border-bottom: 1px solid var(--border-color);
-        border-radius: 0;
-        text-align: left;
-        padding: 12px 20px;
-    }
-    
-    .tab-btn.active::after {
-        display: none;
-    }
-    
-    .shop-filters {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .filter-select {
-        min-width: 100%;
-        padding: 10px;
-    }
-    
-    .custom-order-content {
-        gap: 40px;
-    }
-    
-    .process-steps {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .order-form {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    /* Футер */
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -368,28 +247,6 @@
         padding: 12px 20px;
     }
     
-    /* Блог */
-    .blog-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .blog-sidebar {
-        position: static;
-    }
-    
-    .blog-pagination {
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-    
-    .pagination-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 0.9rem;
-    }
-    
-    /* Модальное окно */
     .modal-content {
         width: 95%;
         max-height: 95vh;
@@ -408,7 +265,6 @@
 
 /* Очень маленькие экраны (до 480px) */
 @media (max-width: 480px) {
-    /* Типография */
     h1 {
         font-size: 1.75rem;
     }
@@ -421,7 +277,6 @@
         font-size: 1.8rem;
     }
     
-    /* Герой-секция */
     .hero-title {
         font-size: 1.8rem;
     }
@@ -430,20 +285,16 @@
         font-size: 0.9rem;
     }
     
-    /* Кнопки */
     .btn {
         padding: 10px 20px;
         font-size: 0.9rem;
     }
     
-    /* Карточки */
     .work-info,
-    .portfolio-info,
-    .shop-info {
+    .portfolio-info {
         padding: 15px;
     }
     
-    /* Секция "Обо мне" */
     .contact-card {
         padding: 20px 15px;
     }
@@ -469,26 +320,6 @@
         font-size: 1.5rem;
     }
     
-    /* Корзина */
-    .cart-item-details h3 {
-        font-size: 1rem;
-    }
-    
-    /* Блог */
-    .post-date {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .date-day {
-        font-size: 1.5rem;
-    }
-    
-    .post-image img {
-        height: 200px;
-    }
-    
-    /* Header для очень маленьких экранов */
     .logo-text {
         font-size: 1.1rem;
     }

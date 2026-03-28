@@ -1,14 +1,9 @@
-// JavaScript для галереи портфолио
+// Лайтбокс для галереи портфолио
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Инициализация лайтбокса для галереи
     initLightbox();
-    
-    // Инициализация кнопки "Загрузить еще"
-    initLoadMore();
 });
 
-// Лайтбокс для просмотра изображений в галерее
 function initLightbox() {
     const galleryImages = document.querySelectorAll('.portfolio-image img');
     const lightbox = document.createElement('div');
@@ -18,8 +13,8 @@ function initLightbox() {
             <span class="lightbox-close">&times;</span>
             <img src="" alt="" class="lightbox-img">
             <div class="lightbox-caption"></div>
-            <button class="lightbox-prev">&larr;</button>
-            <button class="lightbox-next">&rarr;</button>
+            <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     `;
     document.body.appendChild(lightbox);
@@ -27,8 +22,8 @@ function initLightbox() {
     let currentIndex = 0;
     const images = Array.from(galleryImages);
     
-    // Открытие лайтбокса
     galleryImages.forEach((img, index) => {
+        img.style.cursor = 'pointer';
         img.addEventListener('click', function() {
             currentIndex = index;
             updateLightbox();
@@ -37,7 +32,6 @@ function initLightbox() {
         });
     });
     
-    // Обновление содержимого лайтбокса
     function updateLightbox() {
         const lightboxImg = lightbox.querySelector('.lightbox-img');
         const caption = lightbox.querySelector('.lightbox-caption');
@@ -46,7 +40,6 @@ function initLightbox() {
         lightboxImg.src = currentImg.src;
         lightboxImg.alt = currentImg.alt;
         
-        // Получаем заголовок из родительского элемента
         const workInfo = currentImg.closest('.portfolio-card').querySelector('.portfolio-info h3');
         const workDetails = currentImg.closest('.portfolio-card').querySelector('.portfolio-info p');
         
@@ -55,13 +48,11 @@ function initLightbox() {
         }
     }
     
-    // Закрытие лайтбокса
     lightbox.querySelector('.lightbox-close').addEventListener('click', function() {
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
     
-    // Закрытие при клике вне изображения
     lightbox.addEventListener('click', function(e) {
         if (e.target === lightbox) {
             lightbox.classList.remove('active');
@@ -69,7 +60,6 @@ function initLightbox() {
         }
     });
     
-    // Навигация
     lightbox.querySelector('.lightbox-prev').addEventListener('click', function(e) {
         e.stopPropagation();
         currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -82,7 +72,6 @@ function initLightbox() {
         updateLightbox();
     });
     
-    // Навигация с помощью клавиатуры
     document.addEventListener('keydown', function(e) {
         if (!lightbox.classList.contains('active')) return;
         
@@ -98,7 +87,6 @@ function initLightbox() {
         }
     });
     
-    // Добавляем стили для лайтбокса
     const lightboxStyles = `
         .lightbox {
             position: fixed;
@@ -125,13 +113,11 @@ function initLightbox() {
             position: relative;
             max-width: 90%;
             max-height: 90%;
-            width: auto;
-            height: auto;
         }
         
         .lightbox-img {
             max-width: 100%;
-            max-height: 70vh;
+            max-height: 80vh;
             display: block;
             border-radius: 8px;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
@@ -139,7 +125,7 @@ function initLightbox() {
         
         .lightbox-caption {
             position: absolute;
-            bottom: -60px;
+            bottom: -70px;
             left: 0;
             width: 100%;
             color: white;
@@ -150,7 +136,7 @@ function initLightbox() {
         .lightbox-caption h3 {
             color: white;
             margin-bottom: 5px;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         
         .lightbox-caption p {
@@ -181,7 +167,7 @@ function initLightbox() {
             background-color: rgba(255, 255, 255, 0.2);
             border: none;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -210,7 +196,7 @@ function initLightbox() {
             .lightbox-next {
                 width: 40px;
                 height: 40px;
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
             
             .lightbox-prev {
@@ -226,7 +212,7 @@ function initLightbox() {
             }
             
             .lightbox-caption h3 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
         }
     `;
@@ -234,61 +220,4 @@ function initLightbox() {
     const styleSheet = document.createElement('style');
     styleSheet.textContent = lightboxStyles;
     document.head.appendChild(styleSheet);
-}
-
-// Кнопка "Загрузить еще" для портфолио
-function initLoadMore() {
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', function() {
-            // Симуляция загрузки дополнительных работ
-            this.textContent = 'Загрузка...';
-            this.disabled = true;
-            
-            setTimeout(() => {
-                // В реальном проекте здесь будет загрузка данных с сервера
-                // и добавление новых элементов в сетку
-                
-                // Пример добавления новых работ
-                const portfolioGrid = document.querySelector('.portfolio-grid');
-                if (portfolioGrid) {
-                    // Создаем дополнительные элементы портфолио
-                    // В реальном проекте это будут данные с сервера
-                    for (let i = 9; i <= 12; i++) {
-                        const newItem = document.createElement('div');
-                        newItem.className = 'portfolio-item';
-                        newItem.setAttribute('data-category', 'painting');
-                        newItem.innerHTML = `
-                            <div class="portfolio-card">
-                                <div class="portfolio-image">
-                                    <img src="images/portfolio/work${i}.jpg" alt="Дополнительная работа ${i}">
-                                    <div class="portfolio-overlay">
-                                        <button class="view-details" data-work="${i}">Подробнее</button>
-                                    </div>
-                                </div>
-                                <div class="portfolio-info">
-                                    <h3>"Дополнительная работа ${i}"</h3>
-                                    <p>Масло, холст • ${60+i*5}×${40+i*5} см • 2024</p>
-                                </div>
-                            </div>
-                        `;
-                        portfolioGrid.appendChild(newItem);
-                    }
-                    
-                    // Инициализируем кнопки просмотра для новых элементов
-                    const newViewButtons = document.querySelectorAll('.portfolio-item:nth-last-child(-n+4) .view-details');
-                    initNewViewButtons(newViewButtons);
-                }
-                
-                this.style.display = 'none';
-            }, 1500);
-        });
-    }
-    
-    // Инициализация кнопок просмотра для новых элементов
-    function initNewViewButtons(buttons) {
-        // В реальном проекте здесь будет привязка обработчиков событий
-        // для новых кнопок просмотра деталей работы
-    }
 }

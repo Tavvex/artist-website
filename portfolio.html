@@ -3,38 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио | [Имя художника]</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Портфолио | Анна Петрова</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
-    <!-- Хедер - новый дизайн -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="logo">
-                    <span class="logo-text">[Имя художника]</span>
+                    <span class="logo-text">Мошурова Полина</span>
                     <span class="logo-subtitle">художник</span>
                 </a>
             
                 <div class="nav-main">
                     <ul class="nav-menu">
                         <li><a href="index.html" class="nav-link">Главная</a></li>
-                        <li><a href="portfolio.html" class="nav-link">Портфолио</a></li>
+                        <li><a href="portfolio.html" class="nav-link active">Портфолио</a></li>
                         <li><a href="about.html" class="nav-link">Обо мне</a></li>
-                        <li><a href="shop.html" class="nav-link">Магазин</a></li>
-                        <li><a href="blog.html" class="nav-link">Блог</a></li>
+                        <li><a href="shop.html" class="nav-link">Услуги и цены</a></li>
                     </ul>
                     
                     <div class="nav-actions">
                         <a href="#footer" class="contact-btn">Связаться</a>
-                        <a href="shop.html" class="cart-icon" aria-label="Корзина">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="cart-count">0</span>
-                        </a>
                     </div>
                 </div>
                 
@@ -47,8 +44,6 @@
         </div>
     </header>
 
-
-    <!-- Портфолио -->
     <section class="portfolio-section">
         <div class="container">
             <div class="portfolio-header">
@@ -66,7 +61,6 @@
             </div>
             
             <div class="portfolio-grid">
-                <!-- Работа 1 -->
                 <div class="portfolio-item" data-category="painting series-nature">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
@@ -82,7 +76,6 @@
                     </div>
                 </div>
                 
-                <!-- Работа 2 -->
                 <div class="portfolio-item" data-category="painting series-urban">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
@@ -98,7 +91,6 @@
                     </div>
                 </div>
                 
-                <!-- Работа 3 -->
                 <div class="portfolio-item" data-category="painting series-nature">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
@@ -114,7 +106,6 @@
                     </div>
                 </div>
                 
-                <!-- Работа 4 -->
                 <div class="portfolio-item" data-category="graphics">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
@@ -130,7 +121,6 @@
                     </div>
                 </div>
                 
-                <!-- Работа 5 -->
                 <div class="portfolio-item" data-category="painting series-urban">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
@@ -146,7 +136,6 @@
                     </div>
                 </div>
                 
-                <!-- Работа 6 -->
                 <div class="portfolio-item" data-category="graphics archive">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
@@ -162,7 +151,6 @@
                     </div>
                 </div>
                 
-                <!-- Работа 7 -->
                 <div class="portfolio-item" data-category="painting series-nature">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
@@ -178,7 +166,6 @@
                     </div>
                 </div>
                 
-                <!-- Работа 8 -->
                 <div class="portfolio-item" data-category="painting series-urban">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
@@ -194,14 +181,10 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="load-more">
-                <button class="btn btn-outline" id="load-more-btn">Показать еще работы</button>
-            </div>
         </div>
     </section>
 
-    <!-- Модальное окно для деталей работы -->
+    <!-- Модальное окно -->
     <div class="modal-overlay" id="work-modal">
         <div class="modal-content">
             <button class="modal-close" aria-label="Закрыть">
@@ -219,7 +202,7 @@
                         <p id="modal-work-description"></p>
                     </div>
                     <div class="modal-actions">
-                        <a href="#" class="btn btn-primary" id="modal-buy-btn">Купить эту работу</a>
+                        <a href="shop.html" class="btn btn-primary">Заказать подобную работу</a>
                         <button class="btn btn-outline modal-close-btn">Вернуться в галерею</button>
                     </div>
                 </div>
@@ -227,32 +210,31 @@
         </div>
     </div>
 
-    <!-- Футер (такой же как на главной) -->
     <footer id="footer" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <a href="index.html" class="footer-logo">
-                        <span class="logo-text">[Имя художника]</span>
+                        <span class="logo-text">Мошурова Полина</span>
                         <span class="logo-subtitle">художник</span>
                     </a>
-                    <p class="footer-tagline">[Краткий слоган или описание творческого подхода]</p>
+                    <p class="footer-tagline">Создаю картины, которые находят отклик в душе</p>
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="footer-title">Для сотрудничества и заказов</h3>
+                    <h3 class="footer-title">Контакты</h3>
                     <ul class="footer-contacts">
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:[email художника]">[email художника]</a>
+                            <a href="#">---</a>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <a href="tel:[телефон художника]">[телефон художника]</a>
+                            <a href="#">---</a>
                         </li>
                         <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>[Город, студия или галерея]</span>
+                            <i class="fab fa-telegram"></i>
+                            <a href="#" target="_blank">Polina Moshurova</a>
                         </li>
                     </ul>
                 </div>
@@ -260,18 +242,9 @@
                 <div class="footer-column">
                     <h3 class="footer-title">Я в соцсетях</h3>
                     <div class="social-links">
-                        <a href="[ссылка на Instagram]" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="[ссылка на Behance]" target="_blank" aria-label="Behance">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="[ссылка на Pinterest]" target="_blank" aria-label="Pinterest">
-                            <i class="fab fa-pinterest"></i>
-                        </a>
-                        <a href="[ссылка на YouTube]" target="_blank" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                        <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
                     </div>
                     
                     <div class="newsletter">
@@ -287,8 +260,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2024</span> [Имя художника]. Все права защищены.</p>
-                <a href="#" class="privacy-link">Политика конфиденциальности</a>
+                <p>&copy; <span id="current-year">2026</span> Мошурова Полина. Все права защищены.</p>
             </div>
         </div>
     </footer>

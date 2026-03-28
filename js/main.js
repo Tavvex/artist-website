@@ -392,3 +392,4 @@ function initFlashMessages() {
         });
     }, 1000);
 }
+

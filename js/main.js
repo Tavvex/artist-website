@@ -418,17 +418,29 @@ function initPortfolioFilters() {
     if (!portfolioGrid) return;
     
     let currentFilter = 'all';
-    let currentSort = 'newest'; // newest или oldest
+    let currentSort = 'newest';
     
-    // Функция сортировки элементов
-    function sortItems() {
-        const items = Array.from(portfolioGrid.querySelectorAll('.portfolio-item'));
+    // Функция обновления видимости и порядка
+    function updateDisplay() {
+        const items = document.querySelectorAll('.portfolio-item');
+        const visibleItems = [];
+        const hiddenItems = [];
         
-        // Сначала фильтруем видимые элементы
-        const visibleItems = items.filter(item => item.style.display !== 'none');
-        const hiddenItems = items.filter(item => item.style.display === 'none');
+        // Сначала определяем видимость
+        items.forEach(item => {
+            const categories = item.getAttribute('data-category');
+            const isVisible = (currentFilter === 'all' || categories.includes(currentFilter));
+            
+            item.style.opacity = '0';
+            
+            if (isVisible) {
+                visibleItems.push(item);
+            } else {
+                hiddenItems.push(item);
+            }
+        });
         
-        // Сортируем только видимые
+        // Сортируем видимые
         visibleItems.sort((a, b) => {
             const yearA = parseInt(a.getAttribute('data-year'));
             const yearB = parseInt(b.getAttribute('data-year'));
@@ -440,61 +452,48 @@ function initPortfolioFilters() {
             }
         });
         
-        // Переставляем элементы в DOM (сначала отсортированные видимые, потом скрытые)
-        visibleItems.forEach(item => {
-            portfolioGrid.appendChild(item);
-        });
-        hiddenItems.forEach(item => {
-            portfolioGrid.appendChild(item);
-        });
-    }
-    
-    // Функция фильтрации
-    function filterItems() {
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        portfolioItems.forEach(item => {
-            const categories = item.getAttribute('data-category');
-            
-            if (currentFilter === 'all' || categories.includes(currentFilter)) {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                }, 10);
-            } else {
-                item.style.opacity = '0';
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
+        // Применяем order для сортировки
+        visibleItems.forEach((item, index) => {
+            item.style.order = index;
+            item.style.display = 'block';
         });
         
-        // После фильтрации применяем сортировку
-        sortItems();
+        // Скрытые элементы отправляем в конец
+        hiddenItems.forEach((item, index) => {
+            item.style.order = visibleItems.length + index;
+            item.style.display = 'none';
+        });
+        
+        // Плавное появление
+        setTimeout(() => {
+            visibleItems.forEach(item => {
+                item.style.opacity = '1';
+            });
+        }, 50);
     }
     
-    // Обработчики кнопок фильтров
+    // Обработчики фильтров
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
             currentFilter = this.getAttribute('data-filter');
-            filterItems();
+            updateDisplay();
         });
     });
     
-    // Обработчики кнопок сортировки
+    // Обработчики сортировки
     sortButtons.forEach(button => {
         button.addEventListener('click', function() {
             sortButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
             
             currentSort = this.getAttribute('data-sort');
-            sortItems();
+            updateDisplay();
         });
     });
     
-    // Начальная сортировка
-    sortItems();
+    // Инициализация
+    updateDisplay();
 }

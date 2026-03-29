@@ -329,6 +329,12 @@ function initModals() {
                 details: 'Масло, холст • 50x70 см • 2024',
                 description: '---',
                 image: 'images/portfolio/summer_day_50-70.jpg'
+            },
+            9: {
+                title: '"Райский уголок"',
+                details: 'Масло, холст • 20x35 см • 2025',
+                description: '---',
+                image: 'images/portfolio/heavens_corner_20-35.jpg'
             }
         };
         

@@ -28,6 +28,7 @@
                         <li><a href="portfolio.html" class="nav-link active">Портфолио</a></li>
                         <li><a href="about.html" class="nav-link">Обо мне</a></li>
                         <li><a href="shop.html" class="nav-link">Услуги и цены</a></li>
+                        <li><a href="charity.html" class="nav-link">Благотворительность</a></li>
                     </ul>
                     
                     <div class="nav-actions">
@@ -48,21 +49,30 @@
         <div class="container">
             <div class="portfolio-header">
                 <h1 class="page-title">Портфолио</h1>
-                <p class="page-subtitle">Галерея работ за разные годы и в разных техниках</p>
+                <p class="page-subtitle">Галерея работ за разные годы</p>
             </div>
+            
+            <!-- Блок сортировки по годам -->
+            
             
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">Все работы</button>
-                <button class="filter-btn" data-filter="painting">Живопись</button>
-                <button class="filter-btn" data-filter="graphics">Графика</button>
-                <button class="filter-btn" data-filter="series-urban">Городская серия</button>
-                <button class="filter-btn" data-filter="series-nature">Природа</button>
-                <button class="filter-btn" data-filter="archive">Архив</button>
+                <button class="filter-btn" data-filter="still-life">Натюрморты</button>
+                <button class="filter-btn" data-filter="portrait">Портреты</button>
+                <button class="filter-btn" data-filter="landscape">Пейзаж</button>
+                <button class="filter-btn" data-filter="free-composition">Свободная композиция</button>
             </div>
             
-            <div class="portfolio-grid">
+            <div class="portfolio-sort">
+                <div class="sort-buttons">
+                    <button class="sort-btn active" data-sort="newest">Новые сначала ↓</button>
+                    <button class="sort-btn" data-sort="oldest">Старые сначала ↑</button>
+                </div>
+            </div>
 
-                <div class="portfolio-item" data-category="painting">
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Работа 1 - 2024 -->
+                <div class="portfolio-item" data-category="portrait" data-year="2024">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
                             <img src="images\portfolio\alan_60-80.jpg" alt="Картина 'Алан'">
@@ -77,10 +87,11 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="painting series-urban">
+                <!-- Работа 2 - 2026 -->
+                <div class="portfolio-item" data-category="still-life" data-year="2026">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="images/portfolio/freshness_45-60.jpg" alt="Картина 'Городские тени'">
+                            <img src="images/portfolio/freshness_45-60.jpg" alt="Картина 'Глоток свежести'">
                             <div class="portfolio-overlay">
                                 <button class="view-details" data-work="2">Подробнее</button>
                             </div>
@@ -92,10 +103,11 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="painting">
+                <!-- Работа 3 - 2026 -->
+                <div class="portfolio-item" data-category="portrait" data-year="2026">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="images\portfolio\portret_1_35-40.jpg" alt="Картина 'Алан'">
+                            <img src="images\portfolio\portret_1_35-40.jpg" alt="Картина 'Портрет'">
                             <div class="portfolio-overlay">
                                 <button class="view-details" data-work="3">Подробнее</button>
                             </div>
@@ -107,10 +119,11 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="painting">
+                <!-- Работа 4 - 2026 -->
+                <div class="portfolio-item" data-category="portrait" data-year="2026">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="images\portfolio\portret_2_50-60.jpg" alt="Картина 'Алан'">
+                            <img src="images\portfolio\portret_2_50-60.jpg" alt="Картина 'Портрет'">
                             <div class="portfolio-overlay">
                                 <button class="view-details" data-work="4">Подробнее</button>
                             </div>
@@ -122,10 +135,11 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="painting">
+                <!-- Работа 5 - 2024 -->
+                <div class="portfolio-item" data-category="free-composition" data-year="2024">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="images\portfolio\puppeter_60-80.jpg" alt="Картина 'Алан'">
+                            <img src="images\portfolio\puppeter_60-80.jpg" alt="Картина 'Сам себе кукловод'">
                             <div class="portfolio-overlay">
                                 <button class="view-details" data-work="5">Подробнее</button>
                             </div>
@@ -137,10 +151,11 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="painting">
+                <!-- Работа 6 - 2024 -->
+                <div class="portfolio-item" data-category="landscape" data-year="2024">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="images\portfolio\reborn_70-90.jpg" alt="Картина 'Алан'">
+                            <img src="images\portfolio\reborn_70-90.jpg" alt="Картина 'Перерождение'">
                             <div class="portfolio-overlay">
                                 <button class="view-details" data-work="6">Подробнее</button>
                             </div>
@@ -152,10 +167,11 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="painting">
+                <!-- Работа 7 - 2025 -->
+                <div class="portfolio-item" data-category="landscape" data-year="2025">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="images\portfolio\silence_50-70.jpg" alt="Картина 'Алан'">
+                            <img src="images\portfolio\silence_50-70.jpg" alt="Картина 'Тишина'">
                             <div class="portfolio-overlay">
                                 <button class="view-details" data-work="7">Подробнее</button>
                             </div>
@@ -167,10 +183,11 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item" data-category="painting">
+                <!-- Работа 8 - 2024 -->
+                <div class="portfolio-item" data-category="landscape" data-year="2024">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
-                            <img src="images\portfolio\summer_day_50-70.jpg" alt="Картина 'Алан'">
+                            <img src="images\portfolio\summer_day_50-70.jpg" alt="Картина 'Летний денёк'">
                             <div class="portfolio-overlay">
                                 <button class="view-details" data-work="8">Подробнее</button>
                             </div>
@@ -235,8 +252,6 @@
                         </li>
                     </ul>
                 </div>
-                
-                
             </div>
             
             <div class="footer-bottom">

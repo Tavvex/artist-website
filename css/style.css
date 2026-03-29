@@ -1128,3 +1128,69 @@ section {
     text-indent: 50px;
     text-align: justify;
 }
+
+.about-charity{
+    background-color: #bee5eb;
+}
+
+/* ===== АДАПТАЦИЯ ИЗОБРАЖЕНИЙ ===== */
+
+/* Все изображения по умолчанию */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Изображения в карточках */
+.work-image img,
+.portfolio-image img,
+.pricing-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Герой-секция (фоновые изображения) */
+.slide {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Для планшетов */
+@media (max-width: 768px) {
+    .slide {
+        background-position: center 40%;
+    }
+    
+    .portfolio-image {
+        aspect-ratio: 1/1;
+    }
+}
+
+/* Для мобильных */
+@media (max-width: 480px) {
+    .slide {
+        background-position: center 30%;
+    }
+    
+    .portfolio-image {
+        aspect-ratio: 4/3;
+    }
+    
+    /* Опционально: скрываем шапку */
+    .header {
+        display: none;
+    }
+    
+    /* Добавляем отступ для контента */
+    .hero {
+        margin-top: 0;
+    }
+    
+    .portfolio-section,
+    .about-section,
+    .shop-section {
+        padding-top: 30px;
+    }
+}

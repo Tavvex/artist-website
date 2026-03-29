@@ -85,6 +85,8 @@
     .hero-title {
         font-size: 2.5rem;
     }
+
+    
     
     .hero-subtitle {
         font-size: 1rem;
@@ -118,6 +120,10 @@
     .about-image,
     .about-text {
         width: 100%;
+    }
+
+    .about-image{
+        height: auto;
     }
     
     .footer-content {
@@ -187,6 +193,8 @@
     .page-title {
         font-size: 2rem;
     }
+
+    
     
     .works-grid {
         grid-template-columns: 1fr;

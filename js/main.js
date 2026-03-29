@@ -393,3 +393,113 @@ function initFlashMessages() {
     }, 1000);
 }
 
+let lastScrollTop = 0;
+const header = document.querySelector('.header');
+const scrollThreshold = 100; // Через сколько пикселей срабатывает
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (window.innerWidth <= 768) { // Только для мобильных
+        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            // Скролл вниз - скрываем шапку
+            header.style.transform = 'translateY(-100%)';
+            header.style.transition = 'transform 0.3s ease';
+        } else if (scrollTop < lastScrollTop) {
+            // Скролл вверх - показываем шапку
+            header.style.transform = 'translateY(0)';
+        }
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+// Фильтры и сортировка портфолио
+function initPortfolioFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const sortButtons = document.querySelectorAll('.sort-btn');
+    const portfolioGrid = document.getElementById('portfolio-grid');
+    
+    if (!portfolioGrid) return;
+    
+    let currentFilter = 'all';
+    let currentSort = 'newest'; // newest или oldest
+    
+    // Функция сортировки элементов
+    function sortItems() {
+        const items = Array.from(portfolioGrid.querySelectorAll('.portfolio-item'));
+        
+        // Сначала фильтруем видимые элементы
+        const visibleItems = items.filter(item => item.style.display !== 'none');
+        const hiddenItems = items.filter(item => item.style.display === 'none');
+        
+        // Сортируем только видимые
+        visibleItems.sort((a, b) => {
+            const yearA = parseInt(a.getAttribute('data-year'));
+            const yearB = parseInt(b.getAttribute('data-year'));
+            
+            if (currentSort === 'newest') {
+                return yearB - yearA;
+            } else {
+                return yearA - yearB;
+            }
+        });
+        
+        // Переставляем элементы в DOM (сначала отсортированные видимые, потом скрытые)
+        visibleItems.forEach(item => {
+            portfolioGrid.appendChild(item);
+        });
+        hiddenItems.forEach(item => {
+            portfolioGrid.appendChild(item);
+        });
+    }
+    
+    // Функция фильтрации
+    function filterItems() {
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        portfolioItems.forEach(item => {
+            const categories = item.getAttribute('data-category');
+            
+            if (currentFilter === 'all' || categories.includes(currentFilter)) {
+                item.style.display = 'block';
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                }, 10);
+            } else {
+                item.style.opacity = '0';
+                setTimeout(() => {
+                    item.style.display = 'none';
+                }, 300);
+            }
+        });
+        
+        // После фильтрации применяем сортировку
+        sortItems();
+    }
+    
+    // Обработчики кнопок фильтров
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            currentFilter = this.getAttribute('data-filter');
+            filterItems();
+        });
+    });
+    
+    // Обработчики кнопок сортировки
+    sortButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            sortButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            currentSort = this.getAttribute('data-sort');
+            sortItems();
+        });
+    });
+    
+    // Начальная сортировка
+    sortItems();
+}

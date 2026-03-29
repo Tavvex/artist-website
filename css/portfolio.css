@@ -75,3 +75,62 @@
         padding: 6px 15px;
     }
 }
+
+/* Блок сортировки по годам */
+.portfolio-sort {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+}
+
+.sort-label {
+    font-weight: 500;
+    color: var(--color-dark-gray);
+    font-size: 0.9rem;
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.sort-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-family: var(--font-primary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--color-gray);
+}
+
+.sort-btn:hover {
+    border-color: var(--color-green);
+    color: var(--color-green);
+}
+
+.sort-btn.active {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border-color: var(--color-green);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .portfolio-sort {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    .sort-btn {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+}

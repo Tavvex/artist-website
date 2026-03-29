@@ -693,8 +693,6 @@ section {
     display: flex;
     flex-direction: column;
     padding: 40px;
-    flex-direction: row;
-    gap: 40px;
 }
 
 @media (min-width: 768px) {

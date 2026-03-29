@@ -690,7 +690,7 @@ section {
 }
 
 .modal-body {
-    /*display: flex;*/
+    display: flex;
     flex-direction: column;
     padding: 40px;
     flex-direction: row;

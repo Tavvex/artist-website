@@ -304,7 +304,7 @@ function initModals() {
                 title: '"Портрет"',
                 details: 'Масло, холст • 50x60 см • 2026',
                 description: '---',
-                image: 'images/portfolio/portret_2_35-40.jpg'
+                image: 'images/portfolio/portret_2_50-60.jpg'
             },
             5: {
                 title: '"Сам себе кукловод"',
@@ -335,6 +335,24 @@ function initModals() {
                 details: 'Масло, холст • 20x35 см • 2025',
                 description: '---',
                 image: 'images/portfolio/heavens_corner_20-35.jpg'
+            },
+            10: {
+                title: '"Фруктовая поляна"',
+                details: 'Масло, холст • 70x60 см • 2025',
+                description: '---',
+                image: 'images/portfolio/fruit_glade_70-60.jpg'
+            },
+            11: {
+                title: '"Март наступил"',
+                details: 'Масло, холст • 24x30 см • 2024',
+                description: '---',
+                image: 'images/portfolio/march_has_arrived_24-30.jpg'
+            },
+            12: {
+                title: '"Апрель"',
+                details: 'Масло, холст • 25x35 см • 2025',
+                description: '---',
+                image: 'images/portfolio/april_25-35.jpg'
             }
         };
         

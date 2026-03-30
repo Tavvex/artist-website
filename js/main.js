@@ -412,24 +412,32 @@ window.addEventListener('scroll', function() {
 // Фильтры и сортировка портфолио
 function initPortfolioFilters() {
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const statusButtons = document.querySelectorAll('.status-btn');
     const sortButtons = document.querySelectorAll('.sort-btn');
     const portfolioGrid = document.getElementById('portfolio-grid');
     
     if (!portfolioGrid) return;
     
-    let currentFilter = 'all';
-    let currentSort = 'newest';
+    let currentFilter = 'all';      // категория: all, portrait, landscape и т.д.
+    let currentStatus = 'all';      // статус: all, available, sold
+    let currentSort = 'newest';     // сортировка: newest, oldest
     
-    // Функция обновления видимости и порядка
     function updateDisplay() {
         const items = document.querySelectorAll('.portfolio-item');
         const visibleItems = [];
         const hiddenItems = [];
         
-        // Сначала определяем видимость
         items.forEach(item => {
             const categories = item.getAttribute('data-category');
-            const isVisible = (currentFilter === 'all' || categories.includes(currentFilter));
+            const status = item.getAttribute('data-status');
+            
+            // Проверка по категории
+            const categoryMatch = (currentFilter === 'all' || categories.includes(currentFilter));
+            
+            // Проверка по статусу
+            const statusMatch = (currentStatus === 'all' || status === currentStatus);
+            
+            const isVisible = categoryMatch && statusMatch;
             
             item.style.opacity = '0';
             
@@ -440,7 +448,7 @@ function initPortfolioFilters() {
             }
         });
         
-        // Сортируем видимые
+        // Сортируем видимые по году
         visibleItems.sort((a, b) => {
             const yearA = parseInt(a.getAttribute('data-year'));
             const yearB = parseInt(b.getAttribute('data-year'));
@@ -472,7 +480,7 @@ function initPortfolioFilters() {
         }, 50);
     }
     
-    // Обработчики фильтров
+    // Обработчики фильтров по категориям
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -483,7 +491,18 @@ function initPortfolioFilters() {
         });
     });
     
-    // Обработчики сортировки
+    // Обработчики фильтров по статусу
+    statusButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            statusButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            currentStatus = this.getAttribute('data-status');
+            updateDisplay();
+        });
+    });
+    
+    // Обработчики сортировки по году
     sortButtons.forEach(button => {
         button.addEventListener('click', function() {
             sortButtons.forEach(btn => btn.classList.remove('active'));

@@ -29,6 +29,7 @@
                         <li><a href="about.html" class="nav-link">Обо мне</a></li>
                         <li><a href="shop.html" class="nav-link">Услуги и цены</a></li>
                         <li><a href="charity.html" class="nav-link">Благотворительность</a></li>
+                        <li><a href="reviews.html" class="nav-link">Отзывы</a></li>
                     </ul>
                     
                     <div class="nav-actions">
@@ -64,13 +65,22 @@
                 <button class="filter-btn" data-filter="free-composition">Свободная композиция</button>
             </div>
             
-            <div class="portfolio-sort">
-                <div class="sort-buttons">
-                    <button class="sort-btn active" data-sort="newest">Новые сначала ↓</button>
-                    <button class="sort-btn" data-sort="oldest">Старые сначала ↑</button>
+            <div class="portfolio-toolbar">
+                <div class="portfolio-status-filters">
+                    <span class="status-label">Статус:</span>
+                    <button class="status-btn active" data-status="all">Все работы</button>
+                    <button class="status-btn" data-status="for-sale">Доступны для покупки</button>
+                </div>
+
+                <div class="portfolio-sort">
+                    <span class="sort-label">Сортировать по году:</span>
+                    <div class="sort-buttons">
+                       <button class="sort-btn active" data-sort="newest">Новые сначала ↓</button>
+                       <button class="sort-btn" data-sort="oldest">Старые сначала ↑</button>
+                    </div>
                 </div>
             </div>
-
+            
             <div class="portfolio-grid" id="portfolio-grid">
                 <!-- Работа 1 - 2024 -->
                 <div class="portfolio-item" data-category="portrait" data-year="2024">
@@ -137,7 +147,7 @@
                 </div>
                 
                 <!-- Работа 5 - 2024 -->
-                <div class="portfolio-item" data-category="free-composition" data-year="2024">
+                <div class="portfolio-item" data-category="free-composition" data-year="2024" data-status="for-sale">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
                             <img src="images\portfolio\puppeter_60-80.jpg" alt="Картина 'Сам себе кукловод'">
@@ -148,12 +158,16 @@
                         <div class="portfolio-info">
                             <h3>"Сам себе кукловод"</h3>
                             <p>Масло, холст • 60x80 см • 2024</p>
+                            <div class="price-status">
+                                <span class="price">45 000 ₽</span>
+                                <span class="status-badge for-sale">В наличии</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Работа 6 - 2024 -->
-                <div class="portfolio-item" data-category="free-composition" data-year="2024">
+                <div class="portfolio-item" data-category="free-composition" data-year="2024" data-status="for-sale">
                     <div class="portfolio-card">
                         <div class="portfolio-image">
                             <img src="images\portfolio\reborn_70-90.jpg" alt="Картина 'Перерождение'">
@@ -164,6 +178,10 @@
                         <div class="portfolio-info">
                             <h3>"Перерождение"</h3>
                             <p>Масло, холст • 70x90 см • 2024</p>
+                            <div class="price-status">
+                                <span class="price">45 000 ₽</span>
+                                <span class="status-badge for-sale">В наличии</span>
+                            </div>
                         </div>
                     </div>
                 </div>
